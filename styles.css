@@ -59,3 +59,12 @@ h1, h2, p {
         font-size: 1.2em;
     }
 }
+
+#image-container {
+    margin-top: 20px;
+}
+
+#image-display {
+    max-width: 100%; /* Ajustar la imagen al contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+}
