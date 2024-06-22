@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const showImageButton = document.getElementById('show-image-btn');
-    const imageUrl = 'images/ejemplo.jpg'; // Reemplaza con la URL de tu imagen
+    const imageUrl = 'images/anto.jpg'; // Reemplaza con la URL de tu imagen
 
     function showImage() {
         // Almacenar la URL de la imagen en localStorage
