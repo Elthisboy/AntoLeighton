@@ -7,16 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageUrl = 'images/anto.jpg'; // Reemplaza 'ejemplo.jpg' con tu imagen
 
     showImageButton.addEventListener('click', function() {
-        // Crear un elemento <img> para la imagen
-        const imgElement = document.createElement('img');
-        imgElement.src = imageUrl;
-        imgElement.alt = 'Imagen mostrada';
-
-        // Agregar la imagen al contenedor en imagen.html
-        const imageContainer = document.getElementById('image-container');
-        imageContainer.appendChild(imgElement);
+        // Almacenar la URL de la imagen en localStorage
+        localStorage.setItem('imageToShow', imageUrl);
 
         // Redirigir a imagen.html
         window.location.href = 'imagen.html';
     });
+});
+
+// En imagen.html, cargar la imagen almacenada en localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const imageDisplay = document.getElementById('image-display');
+    const imageUrl = localStorage.getItem('imageToShow');
+
+    if (imageUrl) {
+        imageDisplay.src = imageUrl;
+    }
 });
