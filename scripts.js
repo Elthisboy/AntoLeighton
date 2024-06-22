@@ -2,18 +2,28 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const showImageButton = document.getElementById('show-image-btn');
+    const imageUrl = 'images/ejemplo.jpg'; // Reemplaza con la URL de tu imagen
 
-    // URL de la imagen que deseas mostrar
-    const imageUrl = 'images/anto.jpg'; // Reemplaza 'ejemplo.jpg' con tu imagen
-
-    showImageButton.addEventListener('click', function() {
+    function showImage() {
         // Almacenar la URL de la imagen en localStorage
         localStorage.setItem('imageToShow', imageUrl);
-
+        
         // Redirigir a imagen.html
         window.location.href = 'imagen.html';
+    }
+
+    // Escuchar evento 'click'
+    showImageButton.addEventListener('click', showImage);
+
+    // Escuchar evento 'touchstart' para dispositivos táctiles
+    showImageButton.addEventListener('touchstart', function(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del touchstart
+        showImage();
     });
 });
+
+    
+
 
 // En imagen.html, cargar la imagen almacenada en localStorage
 document.addEventListener('DOMContentLoaded', function() {
